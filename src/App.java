@@ -27,5 +27,31 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
         Scanner scanner = new Scanner(System.in);
+        ArrayList<String> names = new ArrayList<>();
+        
+
+            while(true){
+                System.out.println("Name:");
+                String name = scanner.nextLine();
+                if(name.equals("end")){
+                    System.out.println(names);
+                    break;
+                }
+                if(names.contains(name)){
+                    System.out.println("Name already exists. Delete existing name?");
+                    String answer = scanner.nextLine();
+                    if(answer.equals("yes")){
+                        int index = names.indexOf(name);
+                        names.remove(index);
+                    } 
+                }
+                else{
+                    names.add(name);  
+                }
+               
+            }
+           
+            
+       
     }
 }
